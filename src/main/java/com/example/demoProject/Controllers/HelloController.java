@@ -1,10 +1,7 @@
 package com.example.demoProject.Controllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -14,5 +11,10 @@ public class HelloController {
     @GetMapping
     public String helloWorld(){
         return "Hello World";
+    }
+
+    @GetMapping("/{id}")
+    public String helloWorldById(@PathVariable String id){
+        return "Hello " + id;
     }
 }
